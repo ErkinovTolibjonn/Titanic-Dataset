@@ -12,4 +12,11 @@ In this challenge, we ask you to build a predictive model that answers the quest
 Upload file with colab
 
 from google.colab import files
+
 uploaded = files.upload()
+
+import io
+
+df = pd.read_csv(io.BytesIO(uploaded['File name']))
+
+df.head(10)
